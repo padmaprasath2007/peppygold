@@ -22,19 +22,34 @@ export default function Hero() {
           </p>
 
           <div className="hero-buttons">
+            <a
+    href="https://play.google.com/store/apps/details?id=com.peppygold.user"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
             <button className="store-btn playstore">Google Play</button>
+            </a>
+              <a
+    href="https://apps.apple.com/app/peppy-gold-offers-schemes/id6755230672"
+    target="_blank"
+    rel="noopener noreferrer"
+  > 
             <button className="store-btn appstore">App Store</button>
+            </a>
           </div>
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="hero-right">
-          <img
-            src={heroImage}
-            alt="Gold saving illustration"
-            className="hero-image"
-          />
-        </div>
+      <div className="hero-right">
+  <div className="hero-image-float">
+    <img
+      src={heroImage}
+      alt="Gold saving illustration"
+      className="hero-image"
+    />
+  </div>
+</div>
+
 
       </div>
     </section>

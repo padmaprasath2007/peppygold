@@ -18,7 +18,12 @@ export default function Footer() {
             and Safeguard Your Future.
           </h3>
 
-          <button className="footer-btn">Start Today</button>
+          <button
+            className="footer-btn"
+            onClick={() => window.open('https://play.google.com/store', '_blank')}
+          >
+            Start Today
+          </button>
 
           <div className="qr-section">
             <div>

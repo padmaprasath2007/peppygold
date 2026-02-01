@@ -17,6 +17,22 @@ export default function App() {
       }
     }
   }, [hash])
+
+  // Header color change on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector('.navbar')
+      if (!navbar) return
+      if (window.scrollY > 120) {
+        navbar.classList.add('navbar-white')
+      } else {
+        navbar.classList.remove('navbar-white')
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <>
       <Navbar />

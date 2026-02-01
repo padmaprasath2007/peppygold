@@ -21,7 +21,12 @@ export default function Navbar() {
       <div className="nav-right">
         <span className="price">Gold ₹16800/gm</span>
         <span className="price">Silver ₹425/gm</span>
-        <button className="cta-btn">Get Started</button>
+        <button
+          className="cta-btn"
+          onClick={() => window.open('https://play.google.com/store/apps/details?id=com.peppygold.user', '_blank')}
+        >
+          Get Started
+        </button>
       </div>
     </header>
   )

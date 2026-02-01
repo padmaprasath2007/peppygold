@@ -22,21 +22,34 @@ section {
 
 
 /* NAVBAR */
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-
   height: 72px;              /* important */
   z-index: 1000;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 32px;
   background: linear-gradient(90deg, #3d0066, #4d3360);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar.navbar-white {
+  background: #fff !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+.navbar.navbar-white .nav-center a,
+.navbar.navbar-white .cta-btn {
+  color: #3d0066;
+}
+
+.navbar.navbar-white .price {
+  color: #222;
 }
 
 
@@ -106,6 +119,79 @@ section {
 .hero-buttons {
   display: flex;
   gap: 16px;
+}
+.hero-buttons .store-btn {
+  position: relative;
+  cursor: pointer;
+  animation: danceShake 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Stagger second button */
+.hero-buttons .store-btn:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+@keyframes danceShake {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-6px) rotate(-1deg);
+  }
+  40% {
+    transform: translateY(0) rotate(1deg);
+  }
+  60% {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+  80% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+.hero-buttons .store-btn::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.6),
+    transparent 60%
+  );
+  opacity: 0;
+  pointer-events: none;
+  animation: sparkle 2.8s ease-in-out infinite;
+}
+
+/* Stagger sparkle too */
+.hero-buttons .store-btn:nth-child(2)::after {
+  animation-delay: 0.4s;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.hero-buttons .store-btn:hover,
+.hero-buttons .store-btn:hover::after {
+  animation-play-state: paused;
 }
 
 .store-btn {
@@ -275,17 +361,18 @@ section {
 
 .hero-image {
   position: absolute;
-  right: 0; /* attach to the rightmost edge of the container */
-  top: 0;
-  height: 100%;
+  right: 10%;
+  top: 50%;
+  height: 110%;
   width: auto;
   max-width: none;
   object-fit: cover;
   border-top-left-radius: 96px;
   border-bottom-left-radius: 96px;
-  transform: translateX(0);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  transform: translate(20%, -50%) scale(1.08);
+  box-shadow: 0 28px 60px 0 rgba(60,0,102,0.18), 0 8px 32px 0 rgba(0,0,0,0.10);
   z-index: 1;
+  background: #fff;
 }
 
 
@@ -390,6 +477,15 @@ section {
   max-width: 1300px;
   margin: 0 auto;
   align-items: stretch; /* IMPORTANT */
+}
+.how-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.how-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  z-index: 2;
 }
 
 .how-card {
@@ -537,7 +633,7 @@ section {
 
 .benefits-section {
   padding: 90px 6%;
-  background: linear-gradient(135deg, #f0acb3, #fffaf8);
+  background: linear-gradient(135deg, #52baf1, #fffaf8);
 }
 
 .benefits-title {
@@ -557,20 +653,40 @@ section {
   margin: 0 auto;
 }
 
-.benefits-column {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
+  .benefits-column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
 
-.benefit-box {
-  background: #fff;
+ .benefit-box {
+  background: #4f5fc3;
+  text-decoration: solid;
+  font-style:italic;
   padding: 18px 22px;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
   font-size: 15px;
   color: #333;
+  cursor: pointer;
+
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
+
+/* Hover (desktop) */
+.benefit-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Click / Tap */
+.benefit-box:active {
+  transform: translateY(-3px) scale(0.98);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
 
 .benefits-image-wrapper {
   width: 300px;
