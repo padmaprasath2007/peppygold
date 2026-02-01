@@ -1,0 +1,48 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: #111; /* darker background so white text is legible */
+}
+
+.navbar .navbar-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-right .price,
+.nav-center a,
+.cta-btn {
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.actions button {
+  padding: 8px 16px;
+  background: purple;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.cta-btn {
+  padding: 8px 14px;
+  background: #6b21a8;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+}
