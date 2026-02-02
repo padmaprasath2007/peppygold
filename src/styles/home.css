@@ -46,7 +46,7 @@
 .hero-image-float {
   position: absolute;
   right: 10%;
-  top: 50%;
+  top: 10000%;
   transform: translateY(-50%);
   animation: floatImage 3.5s ease-in-out infinite;
   will-change: transform;

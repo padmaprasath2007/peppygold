@@ -1,63 +1,45 @@
-import secureIcon from '../assets/why/secure.png';
-import flexibleIcon from '../assets/why/flexible.png';
-import zeroFeesIcon from '../assets/why/zero-fees.png';
-import supportIcon from '../assets/why/support.png';
+
+import React from 'react';
+// Import your icons here if you have them, otherwise we use emojis/CSS
+// import shieldIcon from '../assets/icons/shield.png'
 
 export default function WhyPeppyGold() {
   return (
-    <section className="why-section" id="why">
-      <h2 className="why-title">Why Peppy Gold ?</h2>
+    <section className="pg-why-bento" id="why-peppy">
+      <div className="pg-bento-header">
+        <p className="pg-bento-subtitle">✨ The Peppy Advantage ✨</p>
+        <h2 className="pg-bento-title">Why Choose Peppy Gold?</h2>
+      </div>
 
-      <div className="why-grid">
-        {/* Item 1 */}
-        <div className="why-item">
-          <div className="why-icon">
-            <img src={secureIcon} alt="Secure Payments" />
-          </div>
-          <div>
-            <h3>Secure Payments & Trusted Jewellers</h3>
-            <p>
-              Save and redeem your gold safely through verified jewellers.
-            </p>
-          </div>
+      <div className="pg-bento-container">
+        {/* LARGE CARD: TRUST & SECURITY */}
+        <div className="pg-bento-card pg-card-large">
+          <div className="pg-card-icon">🛡️</div>
+          <h3>Bank-Grade Security</h3>
+          <p>Your gold is stored in 100% insured, SEBI-regulated vaults with 24/7 monitoring. We partner only with certified, hallmarked jewellers.</p>
+          <div className="pg-card-tag">Most Trusted</div>
         </div>
 
-        {/* Item 2 */}
-        <div className="why-item">
-          <div className="why-icon">
-            <img src={flexibleIcon} alt="Flexible Savings" />
-          </div>
-          <div>
-            <h3>Flexible Saving Options</h3>
-            <p>
-              Choose One-Time, Monthly, Anytime, or Product-based schemes.
-            </p>
-          </div>
+        {/* SMALL CARD: ZERO FEES */}
+        <div className="pg-bento-card pg-card-small">
+          <div className="pg-card-icon">🏷️</div>
+          <h3>0% Platform Fees</h3>
+          <p>No hidden charges. Every rupee goes into your gold.</p>
         </div>
 
-        {/* Item 3 */}
-        <div className="why-item">
-          <div className="why-icon">
-            <img src={zeroFeesIcon} alt="Zero Fees" />
-          </div>
-          <div>
-            <h3>Zero Platform Fees</h3>
-            <p>
-              No hidden charges — invest 100% of your money.
-            </p>
-          </div>
+        {/* SMALL CARD: LIVE TRACKING */}
+        <div className="pg-bento-card pg-card-small">
+          <div className="pg-card-icon">📈</div>
+          <h3>Live Tracking</h3>
+          <p>Real-time updates on your gold savings value.</p>
         </div>
 
-        {/* Item 4 */}
-        <div className="why-item">
-          <div className="why-icon">
-            <img src={supportIcon} alt="24/7 Support" />
-          </div>
-          <div>
-            <h3>24/7 Support & Guidance</h3>
-            <p>
-              Friendly support team ready to assist whenever you need.
-            </p>
+        {/* WIDE CARD: FLEXIBILITY */}
+        <div className="pg-bento-card pg-card-wide">
+          <div className="pg-card-icon">📊</div>
+          <div className="pg-wide-content">
+            <h3>Flexible Saving Plans</h3>
+            <p>Start with as little as ₹10. Daily, weekly, or monthly—you choose how you grow your wealth.</p>
           </div>
         </div>
       </div>

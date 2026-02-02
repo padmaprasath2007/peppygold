@@ -1,64 +1,79 @@
 import { useState } from 'react';
 
-const partnerTestimonials = [
-  {
-    text: 'An absolutely fantastic platform, perfectly suited for the new generation of jewellers and investors!',
-    name: 'Garudaa Gold Palace Pvt Ltd',
+const partners = [
+  { 
+    quote: "Peppy Gold's platform has revolutionized how we connect with digital-first savers.", 
+    brand: "AGS Thangamaaligai", 
+    location: "Tamil Nadu" 
   },
-  {
-    text: 'Peppy Gold has transformed how we engage with customers digitally.',
-    name: 'AGS Thangamaaligai',
+  { 
+    quote: "A transparent and highly secure ecosystem for the bullion industry.", 
+    brand: "Priyanka Bullion", 
+    location: "Global" 
   },
-  {
-    text: 'A highly reliable and transparent gold savings ecosystem.',
-    name: 'Priyanka Bullion Pvt Ltd',
+  { 
+    quote: "The future of gold savings is here, and it's powered by Peppy Gold.", 
+    brand: "Sri Kamalam Jewellery", 
+    location: "South India" 
   },
-  {
-    text: 'Excellent platform with strong technical and business support.',
-    name: 'Shree Gokulam Jewellers',
-  },
-  {
-    text: 'A future-ready solution for the gold industry.',
-    name: 'Dot Com Infoway',
-  },
-  {
-    text: 'Professional team and seamless integration.',
-    name: 'Elangi Thanga Maaligai',
-  },
+  { 
+    quote: "Their commitment to security and transparency is unmatched in the market.", 
+    brand: "Garudaa Gold", 
+    location: "Regional" 
+  }
 ];
 
 export default function PartnersSay() {
   const [index, setIndex] = useState(0);
 
   const prev = () => {
-    setIndex((index - 1 + partnerTestimonials.length) % partnerTestimonials.length);
+    setIndex((index - 1 + partners.length) % partners.length);
   };
 
   const next = () => {
-    setIndex((index + 1) % partnerTestimonials.length);
+    setIndex((index + 1) % partners.length);
   };
 
-  const current = partnerTestimonials[index];
+  const current = partners[index];
 
   return (
-    <section className="testimonials-section">
-      <h2 className="testimonials-title">
-        What Our Partner Say About Peppy Gold
-      </h2>
+    <section className="ps-slider-section">
+      <h2 className="ps-slider-title">What Our <span>Partners Say</span></h2>
 
-      <div className="testimonials-wrapper">
-        <button className="arrow-btn" onClick={prev}>
+      <div className="ps-slider-wrapper">
+        <button className="ps-arrow-btn" onClick={prev}>
           ←
         </button>
 
-        <div className="testimonial-card">
-          <p className="testimonial-text">"{current.text}"</p>
-          <h4 className="testimonial-name">{current.name}</h4>
+        <div className="ps-slider-card">
+          <div className="ps-quote-icon">“</div>
+          <p className="ps-quote-text">{current.quote}</p>
+          
+          <div className="ps-partner-info">
+            <div className="ps-partner-avatar">
+              {current.brand.charAt(0)}
+            </div>
+            <div className="ps-partner-details">
+              <h4>{current.brand}</h4>
+              <span>{current.location}</span>
+            </div>
+          </div>
         </div>
 
-        <button className="arrow-btn" onClick={next}>
+        <button className="ps-arrow-btn" onClick={next}>
           →
         </button>
+      </div>
+
+      {/* Slide Indicators (Dots) */}
+      <div className="ps-slider-dots">
+        {partners.map((_, i) => (
+          <span 
+            key={i} 
+            className={`ps-dot ${i === index ? 'active' : ''}`}
+            onClick={() => setIndex(i)}
+          />
+        ))}
       </div>
     </section>
   );

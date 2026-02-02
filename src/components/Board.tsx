@@ -1,52 +1,53 @@
 export default function Board() {
+  const directors = [
+    { name: "Mr. Arun Pradeep", role: "Founder & CEO, Global" },
+    { name: "Mr. Emmanuel Mani", role: "Co-Founder & CTO, Global" },
+    { name: "Mr. Ravindran Subramaniam", role: "Co-Founder & Head of Client Engagements, USA" },
+    { name: "Mrs. Tabitha Emmanuel", role: "Co-Founder & Head of Security & Compliances, Global" },
+    { name: "Mr. Praveen Kumar", role: "Regional Head of Business Development, India" }
+  ];
+
+  const advisors = [
+    { name: "Mr. CR Venkatesh (CRV)", role: "Founder & CEO - Dot Com Infoway" },
+    { name: "Mr. Sethuraman Sathappan", role: "COO (Retired) - Emirates NBD Bank, India" },
+    { name: "Mrs. Ramadevi S", role: "Founder and CEO of Elangi Thanga Maaligai" }
+  ];
+
   return (
-    <section className="board-section">
-      <h2 className="board-title">Board of Directors</h2>
-
-      <div className="board-grid board-directors">
-        <div className="board-item">
-          <h3>Mr. Arun Pradeep</h3>
-          <p>Founder & CEO, Global</p>
-        </div>
-
-        <div className="board-item">
-          <h3>Mr. Emmanuel Mani</h3>
-          <p>Co-Founder & CTO, Global</p>
-        </div>
-
-        <div className="board-item">
-          <h3>Mr. Ravindran Subramaniam</h3>
-          <p>Co-Founder & Head of Client Engagements, USA</p>
-        </div>
-
-        <div className="board-item">
-          <h3>Mrs. Tabitha Emmanuel</h3>
-          <p>Co-Founder & Head of Security & Compliances, Global</p>
-        </div>
-
-        <div className="board-item">
-          <h3>Mr. Praveen Kumar</h3>
-          <p>Regional Head of Business Development, India</p>
-        </div>
+    <section className="pg-board-section">
+      {/* Header */}
+      <div className="board-header">
+        <span className="board-eyebrow">Leadership</span>
+        <h2 className="board-main-title">Board of <span>Directors</span></h2>
       </div>
 
-      <h2 className="board-title advisory-title">Advisory Board</h2>
+      <div className="board-grid-container">
+        {directors.map((member, i) => (
+          <div key={i} className="board-profile-card">
+            <div className="card-accent"></div>
+            <div className="profile-content">
+              <h3>{member.name}</h3>
+              <p>{member.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-      <div className="board-grid board-advisory">
-        <div className="board-item">
-          <h3>Mr. CR Venkatesh (CRV)</h3>
-          <p>Founder & CEO - Dot Com Infoway</p>
-        </div>
+      {/* Advisory Header */}
+      <div className="board-header advisory-gap">
+        <span className="board-eyebrow">Strategic Guidance</span>
+        <h2 className="board-main-title">Advisory <span>Board</span></h2>
+      </div>
 
-        <div className="board-item">
-          <h3>Mr. Sethuraman Sathappan</h3>
-          <p>COO (Retired) - Emirates NBD Bank, India</p>
-        </div>
-
-        <div className="board-item">
-          <h3>Mrs. Ramadevi S</h3>
-          <p>Founder and CEO of Elangi Thanga Maaligai</p>
-        </div>
+      <div className="board-grid-container advisory-grid">
+        {advisors.map((member, i) => (
+          <div key={i} className="board-profile-card advisor-card">
+            <div className="profile-content">
+              <h3>{member.name}</h3>
+              <p>{member.role}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import FAQ from './pages/FAQ'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import './index.css' // Ensure your CSS is imported here
 
 export default function App() {
   const { hash } = useLocation()
@@ -18,29 +19,16 @@ export default function App() {
     }
   }, [hash])
 
-  // Header color change on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const navbar = document.querySelector('.navbar')
-      if (!navbar) return
-      if (window.scrollY > 120) {
-        navbar.classList.add('navbar-white')
-      } else {
-        navbar.classList.remove('navbar-white')
-      }
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <>
+    <div className="app-dark-bg">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/faq" element={<FAQ />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/faq" element={<FAQ />} />
+        </Routes>
+      </main>
       <Footer />
-    </>
+    </div>
   )
 }
